@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    id: string;
+    details: string | null;
+    name: string;
+    img: string;
+    success: boolean | null;
+    flightNumber: number;
+}
+
+const { success, flightNumber, img, id, details, name } = Astro.props;
+
+const isNull = success === null;
+function successText() {
+    if (isNull) return "In progress 🕝";
+    if (success) return "Mission Succeed";
+    if (!success) return "Mission Failed";
+}
+function bgColor() {
+    if (isNull) return "bg-yellow-500 text-gray-700";
+    if (success) return "bg-green-900 text-green-200";
+    if (!success) return "bg-red-500 text-red-950";
+}
+---
+
+<a
+    href=`/launch/${id}`
+    class="rounded-lg border shadow-md bg-gray-800 border-gray-700 hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col"
+>
+    <picture class="flex justify-center p-4">
+        <Image
+            width={1}
+            height={1}
+            loading={"lazy"}
+            src={img}
+            alt=`Path for launch #${id}`
+            class="mb-5 rounded-lg w-full"
+        />
+    </picture>
+
+    <header class="p-4 flex-grow">
+        <span
+            class={`text-sm select-none font-semibold mr-2 px-2.5 py-0.5 rounded ${bgColor()}`}
+            >{() => successText()}
+        </span>
+
+        <h2 class="my-2 text-2xl font-bold tracking-tighter text-white">
+            Flight #{flightNumber}
+            <span class="text-base text-gray-400 font-mono">({name})</span>
+        </h2>
+
+        <p class="mb-4 font-light text-gray-400">
+            {
+                details != null && details?.length > 100
+                    ? details.slice(0, 100) + "..."
+                    : details
+            }
+        </p>
+    </header>
+</a>

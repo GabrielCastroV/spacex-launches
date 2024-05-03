@@ -1,0 +1,26 @@
+---
+import CardLaunch from "./CardLaunch.astro";
+import { GetLatestLaunches } from "../services/spacex";
+
+const launches = await GetLatestLaunches();
+const defaultImg =
+    "https://www.spacex.com/static/images/backgrounds/demo2patch_final.png";
+---
+
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {
+        launches
+            .reverse()
+            .slice(0, 24)
+            .map((launch) => (
+                <CardLaunch
+                    id={launch.id}
+                    img={launch.links.patch.small ?? defaultImg}
+                    details={launch.details ?? "No description yet. 🌎"}
+                    success={launch.success}
+                    flightNumber={launch.flight_number}
+                    name={launch.name}
+                />
+            ))
+    }
+</div>

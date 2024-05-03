@@ -1,0 +1,236 @@
+---
+import { Image } from "astro:assets";
+
+const spaceX = {
+    whatIsSpaceX: {
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlenrXka1ZUhO1pDuC8w8ziS_LZqUZKzUTtyb2s8mcXw&s",
+        lore: "SpaceX, formally known as Space Exploration Technologies Corp., stands as a pioneering force in the aerospace industry, leading the charge towards a future where space exploration is not only feasible but also commercially viable. Founded by visionary entrepreneur Elon Musk in 2002, SpaceX embarked on a mission to revolutionize space travel and make it accessible to humanity on a scale never before imagined. From its humble beginnings, SpaceX has rapidly evolved into one of the most influential and innovative companies in the world. Musk's bold vision and relentless pursuit of progress have propelled SpaceX to the forefront of space exploration, challenging established norms and redefining what is possible in the vast expanse beyond Earth's atmosphere. At the heart of SpaceX's mission is the belief that humanity's destiny lies among the stars. Musk envisions a future where humans are a multi-planetary species, with settlements on Mars and beyond.",
+        imgDescription:
+            "Falcon Heavy Block 5 boosters B1052 and B1053 landed at LZ-1 and LZ-2 after their April 2019 launch debut. (SpaceX)",
+    },
+    history: {
+        img: "https://www.rollingstone.com/wp-content/uploads/2023/04/elon-musk-RS-1800.jpg?w=1581&h=1054&crop=1",
+        lore: "SpaceX's journey began in 2002 when entrepreneur Elon Musk founded the company with a grand vision to revolutionize space exploration. Musk, already known for his success with companies like PayPal and Tesla, set his sights on the cosmos with the goal of making space travel more accessible and ultimately enabling the colonization of Mars. His passion for space exploration, coupled with his entrepreneurial spirit, propelled SpaceX forward, challenging the conventional wisdom of the aerospace industry.",
+        secondLore:
+            "In its early years, SpaceX faced numerous challenges and skeptics who doubted its ability to succeed in such a demanding and competitive field. However, Musk's unwavering determination and commitment to innovation drove the company forward, leading to several groundbreaking achievements. SpaceX's mission was not only to build rockets but also to fundamentally change the way humans access and interact with space.One of the defining moments in SpaceX's history came in 2008 when the company achieved its first successful launch of the Falcon 1 rocket. This milestone marked the beginning of a new era in space exploration, demonstrating SpaceX's capability to develop reliable and cost-effective launch vehicles. With the success of the Falcon 1, SpaceX quickly gained momentum and began attracting attention from industry leaders and government agencies alike.Over the years, SpaceX continued to push the boundaries of what was possible in spaceflight, developing innovative technologies and engineering solutions to overcome the challenges of launching payloads into orbit.",
+        imgDescription: "Elon Musk, world-renowned comedian.",
+    },
+    achievements: {
+        img: "https://www.teslarati.com/wp-content/uploads/2019/06/Falcon-9-B1051-39A-rollout-horizontal-022819-NASA-Joel-Kowsky-5-crop.jpg",
+        imgDescription:
+            "Falcon 9 B1051 39A rollout horizontal 022819 (NASA - Joel Kowsky) 5 crop",
+    },
+    keys: {
+        img: "https://pbs.twimg.com/media/Fe6XRlKXwAA0mgN.jpg",
+        imgDescription: "Thomas Pesquet in SpaceX flight suit",
+        lore: `Since its founding, SpaceX has achieved numerous milestones that have reshaped the space industry:`,
+        secondLore: `
+        SpaceX developed the Falcon 1, Falcon 9, and Falcon Heavy rockets, which are designed to be reusable, significantly reducing the cost of launching payloads into space. `,
+        thridLore: `The Dragon spacecraft, developed by SpaceX, became the first commercially built and operated spacecraft to be recovered successfully from orbit. It is used for cargo resupply missions to the International Space Station (ISS) and has paved the way for crewed missions as well.`,
+        fourthLore: `SpaceX's Crew Dragon spacecraft, launched atop Falcon 9 rockets, has been instrumental in NASA's Commercial Crew Program, which aims to transport astronauts to and from the ISS. This partnership with NASA marks a significant milestone in commercial space travel.`,
+        fifthLore: `SpaceX's next-generation spacecraft, Starship, is being developed with the goal of enabling crewed missions to Mars and other destinations in the solar system. With its fully reusable design and ability to carry large payloads, Starship has the potential to revolutionize space travel.`,
+    },
+    vision: {
+        lore: `SpaceX's overarching vision is to make life multi-planetary by enabling human colonization of Mars. Musk believes that establishing a self-sustaining colony on Mars is essential for ensuring the long-term survival of humanity. To achieve this vision, SpaceX is working on developing the technologies needed to transport large numbers of people and cargo to Mars, as well as to establish infrastructure for sustainable habitation.`,
+        secondLore: `In addition to its Mars ambitions, SpaceX is also focused on leveraging its rocket technology to provide high-speed, point-to-point transportation on Earth. The company's Starship spacecraft could potentially revolutionize long-distance travel by significantly reducing travel times between cities.`,
+        img: "https://cdn.mos.cms.futurecdn.net/j54xVfDBCTf5VYr5nTGkyQ-650-80.jpeg.webp",
+        imgDescription: `SpaceX's Crew-2 astronauts. From the left, ESA astronaut Thomas Pesquet, NASA astronauts Megan McArthur and Shane Kimbrough and JAXA astronaut Akihiko Hoshide. (Image credit: SpaceX)`,
+    },
+    alliance: {
+        lore: `SpaceX has formed strategic partnerships and alliances with various organizations to advance its goals:`,
+        secondLore: `SpaceX has a long-standing partnership with NASA, collaborating on missions to the ISS, as well as developing technologies for deep space exploration. NASA has awarded SpaceX contracts for cargo resupply missions and crewed flights to the ISS, cementing SpaceX's role as a key player in the future of space exploration.`,
+        thirdLore: `SpaceX has established itself as a leader in the commercial satellite launch market, launching satellites for various companies and organizations around the world. Its reliable and cost-effective launch services have made it a preferred choice for satellite deployment.`,
+        fourthLore: `SpaceX has also formed partnerships with international space agencies and organizations to collaborate on space exploration initiatives. These partnerships allow SpaceX to leverage resources and expertise from around the world to advance its goals.`,
+        img: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Charles_Bolden_congratulates_SpaceX_CEO_and_Chief_Designer_Elon_Musk_in_front_of_the_historic_Dragon_capsule.jpg",
+        imgDescription: `Then-NASA Administrator Charles Bolden congratulating Musk by the SpaceX Dragon following its 2012 mission`,
+    },
+};
+---
+
+<article class="w-full flex flex-col gap-10">
+    <section class="flex flex-col md:flex-row gap-4 w-full">
+        <aside class="flex flex-col gap-12 w-full">
+            <h2
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start"
+            >
+                What is SpaceX?
+            </h2>
+            <p class="text-md font-light font-mono md:pr-10">
+                {spaceX.whatIsSpaceX.lore}
+            </p>
+        </aside>
+        <aside class="place-content-center flex flex-col gap-2 md:w-1/2">
+            <Image
+                title={spaceX.whatIsSpaceX.imgDescription}
+                class="w-full rounded-lg shadow-lg select-none aspect-square"
+                alt={spaceX.whatIsSpaceX.imgDescription}
+                width={200}
+                height={200}
+                src={spaceX.whatIsSpaceX.img}
+                loading={"eager"}
+            />
+            <p class="text-center text-[10px] italic text-gray-300">
+                {spaceX.whatIsSpaceX.imgDescription}
+            </p>
+        </aside>
+    </section>
+    <section class="flex flex-col md:flex-row-reverse gap-4">
+        <aside class="flex flex-col gap-12 md:w-1/2">
+            <h2
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-center"
+            >
+                History and Origins
+            </h2>
+            <p class="text-md font-light font-mono md:mb-4 md:pl-6">
+                {spaceX.history.lore}
+            </p>
+        </aside>
+        <aside class="place-content-center flex flex-col gap-2 md:w-1/2">
+            <Image
+                title="Daddy Elon"
+                class="w-full rounded-lg shadow-lg select-none aspect-[3/2]"
+                alt={"Elon Musk"}
+                width={200}
+                height={200}
+                src={spaceX.history.img}
+                loading={"eager"}
+            />
+            <p class="text-center text-[10px] italic text-gray-300">
+                {spaceX.history.imgDescription}
+            </p>
+        </aside>
+    </section>
+    <section>
+        <p class="text-md font-light font-mono">{spaceX.history.secondLore}</p>
+    </section>
+    <section>
+        <Image
+            title={spaceX.achievements.imgDescription}
+            alt={spaceX.achievements.imgDescription}
+            width={400}
+            height={100}
+            src={spaceX.achievements.img}
+            loading={"lazy"}
+            class:list="w-full aspect-[16/6] rounded-lg"
+        />
+        <p class="text-center text-[10px] italic text-gray-300">
+            {spaceX.achievements.imgDescription}
+        </p>
+    </section>
+    <section class="flex flex-col md:flex-row gap-4 w-full">
+        <aside class="flex flex-col gap-12 w-full">
+            <h2
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start"
+            >
+                Key Achievements:
+            </h2>
+            <p class="text-md font-light font-mono md:pr-10">
+                {spaceX.keys.lore}
+                <br />
+                <br />
+                <span class="font-extrabold text-lg text-orange-500"
+                    >1. Falcon Rockets:
+                </span>{spaceX.keys.secondLore}
+                <br />
+                <br />
+                <span class="font-extrabold text-lg text-orange-500"
+                    >2. Dragon Spacecraft:
+                </span>{spaceX.keys.thridLore}
+                <br />
+                <br />
+                <span class="font-extrabold text-lg text-orange-500"
+                    >3. Commercial Crew Program:
+                </span>{spaceX.keys.fourthLore}
+                <br />
+                <br />
+                <span class="font-extrabold text-lg text-orange-500"
+                    >4. Starship:
+                </span>{spaceX.keys.fifthLore}
+            </p>
+        </aside>
+        <aside class="place-content-center flex flex-col gap-2 md:w-1/2">
+            <Image
+                title={spaceX.keys.imgDescription}
+                class="w-full rounded-lg shadow-lg select-none aspect-[4/6] md:aspect-[3.5/6]"
+                alt={spaceX.keys.imgDescription}
+                width={200}
+                height={200}
+                src={spaceX.keys.img}
+                loading={"lazy"}
+            />
+            <p class="text-center text-[10px] italic text-gray-300">
+                {spaceX.keys.imgDescription}
+            </p>
+        </aside>
+    </section>
+    <section class="flex flex-col md:flex-row-reverse gap-4 w-full">
+        <aside class="flex flex-col gap-12 w-full md:pl-10">
+            <h2
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start"
+            >
+                Partnerships and Alliances
+            </h2>
+            <p class="text-md font-light font-mono">
+                {spaceX.alliance.lore}
+                <br />
+                <br />
+                <span class="font-extrabold text-lg text-orange-500"
+                    >1. NASA:
+                </span>{spaceX.alliance.secondLore}
+                <br />
+                <br />
+                <span class="font-extrabold text-lg text-orange-500"
+                    >2. Commercial Satellite Launches:
+                </span>{spaceX.alliance.thirdLore}
+                <br />
+                <br />
+                <span class="font-extrabold text-lg text-orange-500"
+                    >3. International Partnerships:
+                </span>{spaceX.alliance.fourthLore}
+            </p>
+        </aside>
+        <aside class="place-content-center flex flex-col gap-2 md:w-1/2">
+            <Image
+                title={spaceX.alliance.imgDescription}
+                class="w-full rounded-lg shadow-lg select-none"
+                alt={spaceX.alliance.imgDescription}
+                width={200}
+                height={200}
+                src={spaceX.alliance.img}
+                loading={"lazy"}
+            />
+            <p class="text-center text-[10px] italic text-gray-300">
+                {spaceX.alliance.imgDescription}
+            </p>
+        </aside>
+    </section>
+    <section class="flex flex-col md:flex-row gap-4">
+        <aside class="flex flex-col gap-12 md:w-1/2">
+            <h2
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-center"
+            >
+                Vision and Mission
+            </h2>
+            <p class="text-md font-light font-mono md:mb-4">
+                {spaceX.vision.lore}
+                <br />
+                <br />
+                {spaceX.vision.secondLore}
+            </p>
+        </aside>
+        <aside class="place-content-center flex flex-col gap-2 md:w-1/2">
+            <Image
+                title="Crew of SpaceX"
+                class="w-full rounded-lg shadow-lg select-none aspect-[3/2]"
+                alt={"SpaceX Crew"}
+                width={200}
+                height={200}
+                src={spaceX.vision.img}
+                loading={"lazy"}
+            />
+            <p class="text-center text-[10px] italic text-gray-300">
+                {spaceX.vision.imgDescription}
+            </p>
+        </aside>
+    </section>
+</article>
