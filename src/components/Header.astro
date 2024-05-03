@@ -1,9 +1,12 @@
 ---
 import HeaderButton from "./HeaderButton.astro";
+const isHome = Astro.url.pathname === "/";
+
+const fixed = "fixed z-10 top-0 left-0 right-0";
 ---
 
 <header
-    class="py-8 px-4 mx-auto max-w-2xl lg:py-16 lg:px-6 flex flex-col gap-10 justify-center"
+    class=`py-8 px-4 mx-auto max-w-2xl lg:py-16 lg:px-6 flex flex-col gap-10 justify-center ${isHome ? fixed : '' }`
 >
     <a
         href="/"

@@ -12,7 +12,7 @@ const spaceX = {
         img: "https://www.rollingstone.com/wp-content/uploads/2023/04/elon-musk-RS-1800.jpg?w=1581&h=1054&crop=1",
         lore: "SpaceX's journey began in 2002 when entrepreneur Elon Musk founded the company with a grand vision to revolutionize space exploration. Musk, already known for his success with companies like PayPal and Tesla, set his sights on the cosmos with the goal of making space travel more accessible and ultimately enabling the colonization of Mars. His passion for space exploration, coupled with his entrepreneurial spirit, propelled SpaceX forward, challenging the conventional wisdom of the aerospace industry.",
         secondLore:
-            "In its early years, SpaceX faced numerous challenges and skeptics who doubted its ability to succeed in such a demanding and competitive field. However, Musk's unwavering determination and commitment to innovation drove the company forward, leading to several groundbreaking achievements. SpaceX's mission was not only to build rockets but also to fundamentally change the way humans access and interact with space.One of the defining moments in SpaceX's history came in 2008 when the company achieved its first successful launch of the Falcon 1 rocket. This milestone marked the beginning of a new era in space exploration, demonstrating SpaceX's capability to develop reliable and cost-effective launch vehicles. With the success of the Falcon 1, SpaceX quickly gained momentum and began attracting attention from industry leaders and government agencies alike.Over the years, SpaceX continued to push the boundaries of what was possible in spaceflight, developing innovative technologies and engineering solutions to overcome the challenges of launching payloads into orbit.",
+            "In its early years, SpaceX faced numerous challenges and skeptics who doubted its ability to succeed in such a demanding and competitive field. However, Musk's unwavering determination and commitment to innovation drove the company forward, leading to several groundbreaking achievements. SpaceX's mission was not only to build rockets but also to fundamentally change the way humans access and interact with space. One of the defining moments in SpaceX's history came in 2008 when the company achieved its first successful launch of the Falcon 1 rocket. This milestone marked the beginning of a new era in space exploration, demonstrating SpaceX's capability to develop reliable and cost-effective launch vehicles. With the success of the Falcon 1, SpaceX quickly gained momentum and began attracting attention from industry leaders and government agencies alike.Over the years, SpaceX continued to push the boundaries of what was possible in spaceflight, developing innovative technologies and engineering solutions to overcome the challenges of launching payloads into orbit.",
         imgDescription: "Elon Musk, world-renowned comedian.",
     },
     achievements: {
@@ -47,11 +47,36 @@ const spaceX = {
 };
 ---
 
-<article class="w-full flex flex-col gap-10">
+<article class="w-full flex flex-col gap-10 text-gray-300">
+    <header class="flex gap-2 items-center">
+        <a
+            href="http://www.x.com/avocadostoasted"
+            target="_blank"
+            rel="noopener noreferrer"
+            class=""
+        >
+            <Image
+                src="https://unavatar.io/twitter/avocadostoasted"
+                alt=`blog's author`
+                width={20}
+                height={20}
+                loading={"eager"}
+                class="rounded-full shadow-md w-6 md:w-8"
+            />
+        </a>
+        <div class="flex flex-col">
+            <span class="text-xs md:text-md text-gray-200"
+                >Gabriel Castro
+            </span>
+            <span class="text-[10px] md:text-xs text-gray-400"
+                >Updated: May 03 2024</span
+            >
+        </div>
+    </header>
     <section class="flex flex-col md:flex-row gap-4 w-full">
         <aside class="flex flex-col gap-12 w-full">
             <h2
-                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start"
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start text-gray-200"
             >
                 What is SpaceX?
             </h2>
@@ -77,7 +102,7 @@ const spaceX = {
     <section class="flex flex-col md:flex-row-reverse gap-4">
         <aside class="flex flex-col gap-12 md:w-1/2">
             <h2
-                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-center"
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-center text-gray-200"
             >
                 History and Origins
             </h2>
@@ -93,7 +118,7 @@ const spaceX = {
                 width={200}
                 height={200}
                 src={spaceX.history.img}
-                loading={"eager"}
+                loading={"lazy"}
             />
             <p class="text-center text-[10px] italic text-gray-300">
                 {spaceX.history.imgDescription}
@@ -111,7 +136,7 @@ const spaceX = {
             height={100}
             src={spaceX.achievements.img}
             loading={"lazy"}
-            class:list="w-full aspect-[16/6] rounded-lg"
+            class:list="w-full aspect-[16/6] rounded-lg select-none"
         />
         <p class="text-center text-[10px] italic text-gray-300">
             {spaceX.achievements.imgDescription}
@@ -120,7 +145,7 @@ const spaceX = {
     <section class="flex flex-col md:flex-row gap-4 w-full">
         <aside class="flex flex-col gap-12 w-full">
             <h2
-                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start"
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start text-gray-200"
             >
                 Key Achievements:
             </h2>
@@ -166,7 +191,7 @@ const spaceX = {
     <section class="flex flex-col md:flex-row-reverse gap-4 w-full">
         <aside class="flex flex-col gap-12 w-full md:pl-10">
             <h2
-                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start"
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-start text-gray-200"
             >
                 Partnerships and Alliances
             </h2>
@@ -192,7 +217,7 @@ const spaceX = {
         <aside class="place-content-center flex flex-col gap-2 md:w-1/2">
             <Image
                 title={spaceX.alliance.imgDescription}
-                class="w-full rounded-lg shadow-lg select-none"
+                class="w-full rounded-lg shadow-lg select-none aspect-[4/6]"
                 alt={spaceX.alliance.imgDescription}
                 width={200}
                 height={200}
@@ -205,9 +230,9 @@ const spaceX = {
         </aside>
     </section>
     <section class="flex flex-col md:flex-row gap-4">
-        <aside class="flex flex-col gap-12 md:w-1/2">
+        <aside class="flex flex-col gap-12 md:w-1/2 md:pr-10">
             <h2
-                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-center"
+                class="font-semibold font-mono text-5xl md:text-6xl text-center md:text-center text-gray-200"
             >
                 Vision and Mission
             </h2>
