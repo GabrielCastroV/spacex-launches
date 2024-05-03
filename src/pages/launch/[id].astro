@@ -90,7 +90,13 @@ export const getStaticPaths = (async () => {
                             </p>
                         )
                     }
-                    {(<p class=" px-12 text-gray-300">{details ?? lorem}</p>)}
+                    {
+                        (
+                            <p class=" px-2 md:px-6 text-gray-300">
+                                {details ?? lorem}
+                            </p>
+                        )
+                    }
                 </p>
             </div>
         </div>

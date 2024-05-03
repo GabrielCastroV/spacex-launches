@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -24,6 +25,7 @@ const isHome = Astro.url.pathname === "/";
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="bg-gray-900 min-h-screen">
 		<Header />
@@ -31,24 +33,23 @@ const isHome = Astro.url.pathname === "/";
 			<slot />
 		</main>
 		{!isHome && <Footer />}
-	</body>
+	</body><style is:global>
+		html {
+			font-family: system-ui, sans-serif;
+			background: #13151a;
+			background-size: 224px;
+			color-scheme: dark light;
+		}
+		code {
+			font-family:
+				Menlo,
+				Monaco,
+				Lucida Console,
+				Liberation Mono,
+				DejaVu Sans Mono,
+				Bitstream Vera Sans Mono,
+				Courier New,
+				monospace;
+		}
+	</style>
 </html>
-<style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-		color-scheme: dark light;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
