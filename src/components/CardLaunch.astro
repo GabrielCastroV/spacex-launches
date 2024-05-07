@@ -29,7 +29,10 @@ function bgColor() {
     href=`/launch/${id}`
     class="rounded-lg border shadow-md bg-gray-800 border-gray-700 hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col"
 >
-    <picture class="flex justify-center p-4">
+    <picture
+        class="flex justify-center p-4"
+        transition:name=`mission-img ${id}`
+    >
         <Image
             width={1}
             height={1}
@@ -48,7 +51,10 @@ function bgColor() {
 
         <h2 class="my-2 text-2xl font-bold tracking-tighter text-gray-200">
             Flight #{flightNumber}
-            <span class="text-base text-gray-400 font-mono">({name})</span>
+            <span
+                class="text-base text-gray-400 font-mono"
+                transition:name=`mission-name ${id}`>({name})</span
+            >
         </h2>
 
         <p class="mb-4 font-light text-gray-400">
